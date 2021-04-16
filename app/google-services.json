@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "68713842845",
+    "project_id": "login-hack-e06e1",
+    "storage_bucket": "login-hack-e06e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68713842845:android:8cb4c4e22c17f33f1cac74",
+        "android_client_info": {
+          "package_name": "com.example.loginhack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68713842845-9n4i4k49morqbp2tvhbc9h1nnu1qh6fg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTvFjG29K2jxgJ1EbyJ1UkyxGka-_h3DU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68713842845-9n4i4k49morqbp2tvhbc9h1nnu1qh6fg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
