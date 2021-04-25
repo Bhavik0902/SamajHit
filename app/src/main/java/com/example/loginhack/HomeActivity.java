@@ -97,6 +97,7 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+
         db.collection("Help").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
