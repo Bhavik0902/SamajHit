@@ -95,6 +95,9 @@ public class DonateActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        LatLng latLng = new LatLng(21.492077, 77.899625);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,5));
+
         progressBar.setVisibility(View.GONE);
         mMap.setOnMapLongClickListener(this);
 
@@ -119,6 +122,12 @@ public class DonateActivity extends FragmentActivity implements OnMapReadyCallba
             }
         });
 
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                cardView.setVisibility(View.GONE);
+            }
+        });
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override

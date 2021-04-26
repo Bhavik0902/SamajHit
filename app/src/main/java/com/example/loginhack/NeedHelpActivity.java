@@ -54,7 +54,7 @@ import java.util.Objects;
 public class NeedHelpActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
     private GoogleMap mMap;
-
+    MaterialCardView cardView;
     LocationManager locationManager;
     LocationListener locationListener;
 
@@ -79,6 +79,8 @@ public class NeedHelpActivity extends FragmentActivity implements OnMapReadyCall
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        cardView = findViewById(R.id.helpCard);
+
         progressBar = findViewById(R.id.progress1);
         progressBar.setVisibility(View.VISIBLE);
 
@@ -95,6 +97,9 @@ public class NeedHelpActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        LatLng latLng = new LatLng(21.492077, 77.899625);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,5));
+
         progressBar.setVisibility(View.GONE);
         mMap.setOnMapLongClickListener(this);
 
@@ -119,10 +124,16 @@ public class NeedHelpActivity extends FragmentActivity implements OnMapReadyCall
             }
         });
 
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                cardView.setVisibility(View.GONE);
+            }
+        });
+
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                MaterialCardView cardView = findViewById(R.id.helpCard);
                 cardView.setVisibility(View.VISIBLE);
 
                 TextView address = findViewById(R.id.address1);
