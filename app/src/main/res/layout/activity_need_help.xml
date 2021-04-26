@@ -6,13 +6,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+        android:layout_width="match_parent"
+        android:minHeight="40sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/place_autocomplete_fragment"
         tools:context=".NeedHelpActivity"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="-55dp">
+        tools:layout_editor_absoluteX="15dp">
 
     </fragment>
 
@@ -24,7 +35,7 @@
         app:cardCornerRadius="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/place_autocomplete_fragment">
 
         <TextView
             android:layout_width="match_parent"
@@ -99,14 +110,14 @@
                     android:text="BHAVIK AGRAWAL"
                     android:textSize="16sp"/>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/msgHelp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_message_24"
-                android:layout_gravity="end"
-                android:layout_margin="5sp"
-                app:backgroundTint="#34A853"/>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/msgHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_message_24"
+                    android:layout_gravity="end"
+                    android:layout_margin="5sp"
+                    app:backgroundTint="#34A853"/>
             </LinearLayout>
 
         </LinearLayout>
